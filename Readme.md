@@ -1,7 +1,7 @@
 # Личный проект «Техномарт»
 
 * Студент: [Юрий Лемеш](https://up.htmlacademy.ru/htmlcss/27/user/968211).
-* Наставник: [Роман Алексютин](https://htmlacademy.ru/profile/extremum).
+* Наставник: `Неизвестно`.
 
 ---
 
