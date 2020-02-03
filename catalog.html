@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
   </head>
-  <body style="background-color: gray"> <!-- временный стиль -->
+  <body>
 
     <header>
       <a href="index.html">
@@ -28,8 +28,8 @@
 
         <!-- Или -->
         <p>
-          <a href="#">Равшан Джамшутович</a>
-          <a href="#">Выйти</a>
+          <a href="#" aria-label="Войти в профайл">Равшан Джамшутович</a>
+          <a href="#"><span class="visually-hidden">Выйти</span></a>
         </p>
         <ul>
           <li><a href="#">Мои заказы</a></li>
@@ -38,17 +38,27 @@
       </div>
 
       <!-- Заготовка формы поиска -->
-      <form>
+      <form action="https://echo.htmlacademy.ru" method="post" role="search">
         <label>
           Поиск:
           <input type="search" name="search">
         </label>
-        <input type="submit" value="Найти">
+        <button type="submit" value="Найти"></button>
       </form>
 
       <ul>
-        <li><a href="#">Закладки: 0</a></li>
-        <li><a href="#">Корзина: 0</a></li>
+        <li>
+          <a href="#">
+            Закладки: <span class="visually-hidden">Товаров: </span>
+            0
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Корзина: <span class="visually-hidden">Товаров: </span>
+            0
+          </a>
+        </li>
         <li><a href="#">Оформить заказ</a></li>
       </ul>
 
@@ -88,6 +98,8 @@
             <button type="button">По цене</button>
             <button type="button">По типу</button>
             <button type="button">По функционалу</button>
+            <button type="button"><span class="visually-hidden">От меньшего к большему</span></button>
+            <button type="button"><span class="visually-hidden">От большего к меньшему</span></button>
           </p>
         </header>
 
@@ -124,7 +136,7 @@
           </li>
           <li>
             <h3>Перфоратор BOSCH BFG 2000</h3>
-            <span>new</span>
+            <strong>new</strong>
             <img src="img/catalog-1.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
             <span>25500 Р.</span>
             <div>
@@ -164,7 +176,7 @@
           </li>
           <li>
             <h3>Перфоратор BOSCH BFG 2000</h3>
-            <span>new</span>
+            <strong>new</strong>
             <img src="img/catalog-2.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 2000">
             <span>25500 Р.</span>
             <div>
@@ -185,35 +197,88 @@
         </ul>
 
         <!-- Пагинация -->
-        <ol>
-          <li><a>1</a></li>
-          <li><a href="#">2</a></li>
-          <li><a href="#">3</a></li>
-          <li><a href="#">Следующая</a></li>
-        </ol>
+        <nav aria-label="Пагинация">
+          <ol>
+            <li><a aria-current="page"><span class="visually-hidden">Страница </span>1</a></li>
+            <li><a href="#"><span class="visually-hidden">Страница </span>2</a></li>
+            <li><a href="#"><span class="visually-hidden">Страница </span>3</a></li>
+            <li><a href="#">Следующая <span class="visually-hidden">страница</span></a></li>
+          </ol>
+        </nav>
       </section>
 
       <!-- Фильтр -->
       <section>
         <h2>Фильтр</h2>
         <!-- Заготовка формы -->
-        <form>
-          <ul>
-            <li>
-              <h3>Цена:</h3>
-              <!-- Здесь будут элементы форм -->
-            </li>
-            <li>
-              <h3>Производители:</h3>
-              <!-- Здесь будут элементы форм -->
-            </li>
-            <li>
-              <h3>Питание:</h3>
-              <!-- Здесь будут элементы форм -->
-            </li>
-          </ul>
+        <form action="https://echo.htmlacademy.ru" method="post">
+          <fieldset>
+            <legend>Цена:</legend>
 
-          <input type="submit" name="aply-filter" value="Показать">
+            <!-- здесь будет double range slider -->
+
+            <label class="visually-hidden" for="price-from">Цена от</label>
+            <input id="price-from" type="number" name="price-from">
+            <!-- спан для тире между полями -->
+            <span aria-hidden="true">&mdash;</span>
+            <label class="visually-hidden" for="price-to">Цена до</label>
+            <input id="price-to" type="number" name="price-to">
+          </fieldset>
+
+          <fieldset>
+            <legend>Производители:</legend>
+            <ul>
+              <li>
+                <label>
+                  <input type="checkbox" name="bosch" checked>
+                  Bosch
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="Интерскол">
+                  Интерскол
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="Makita" checked>
+                  Makita
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="Dewalt">
+                  Dewalt
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="checkbox" name="Hitachi">
+                  Hitachi
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+
+          <fieldset>
+            <legend>Питание:</legend>
+            <ul>
+              <li>
+                <label>
+                  <input type="radio" name="energy-type" value="" checked>
+                  Аккумуляторные
+                </label>
+              </li>
+              <li>
+                <label>
+                  <input type="radio" name="energy-type">
+                  Сетевые
+                </label>
+              </li>
+            </ul>
+          </fieldset>
+          <button type="submit">Показать</button>
         </form>
       </section>
 
@@ -253,15 +318,58 @@
       <p>© 2010–2019 Компания «Техномарт» <br>Все права защищены</p>
 
       <ul>
-        <li><a href="#">Вконтакте</a></li>
-        <li><a href="#">Фэйсбук</a></li>
-        <li><a href="#">Инстаграм</a></li>
+        <li>
+          <a href="#">
+            <span class="visually-hidden">Вконтакте</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="visually-hidden">Фэйсбук</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="visually-hidden">Инстаграм</span>
+          </a>
+        </li>
       </ul>
 
       <p>Обратная связь: <br><a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
 
       <p>Разработано — <br><a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">htmlacademy.ru</a></p>
     </footer>
+
+
+    <section>
+      <h2 class="visually-hidden">Обратная связь</h2>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <label>
+          Ваше имя:
+          <input type="text" name="name" placeholder="Имя Фамилия">
+        </label>
+        <label>
+          Ваш e-mail:
+          <input type="text" name="email" placeholder="email@example.com">
+        </label>
+        <label>
+          Текст письма:
+          <textarea rows="5" cols="70" placeholder="В свободной форме" required></textarea>
+        </label>
+        <button type="submit">Отправить</button>
+        <button type="button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+      </form>
+    </section>
+
+    <section>
+      <h2 class="visually-hidden">Как нас найти</h2>
+      <img src="img/map-big.png" width="940" height="446" alt="ул. Большая конюшенная 19">
+      <button type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </section>
 
   </body>
 </html>

@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <title>HTML Academy: Техномарт</title>
   </head>
-  <body style="background-color: gray"> <!-- временный стиль -->
+  <body>
 
     <header>
       <a>
@@ -28,8 +28,8 @@
 
         <!-- Или -->
         <p>
-          <a href="#">Равшан Джамшутович</a>
-          <a href="#">Выйти</a>
+          <a href="#" aria-label="Войти в профайл">Равшан Джамшутович</a>
+          <a href="#"><span class="visually-hidden">Выйти</span></a>
         </p>
         <ul>
           <li><a href="#">Мои заказы</a></li>
@@ -38,17 +38,27 @@
       </div>
 
       <!-- Заготовка формы поиска -->
-      <form>
+      <form action="https://echo.htmlacademy.ru" method="post" role="search">
         <label>
           Поиск:
           <input type="search" name="search">
         </label>
-        <input type="submit" value="Найти">
+        <button type="submit" value="Найти"></button>
       </form>
 
       <ul>
-        <li><a href="#">Закладки: 0</a></li>
-        <li><a href="#">Корзина: 0</a></li>
+        <li>
+          <a href="#">
+            Закладки: <span class="visually-hidden">Товаров: </span>
+            0
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            Корзина: <span class="visually-hidden">Товаров: </span>
+            0
+          </a>
+        </li>
         <li><a href="#">Оформить заказ</a></li>
       </ul>
 
@@ -67,34 +77,34 @@
 
     <main>
 
-      <h1>Интернет-магазин «Техномарт»</h1>
+      <h1 class="visually-hidden">Интернет-магазин «Техномарт»</h1>
 
       <!-- Популярные категории -->
       <section>
-        <h2>Популярные категории</h2>
+        <h2 class="visually-hidden">Популярные категории</h2>
         <ul>
           <li>
             <h3>Материалы</h3>
-            <img src="https://via.placeholder.com/75x60" width="75" height="60" alt="Материалы">
+            <img src="https://via.placeholder.com/75x60" width="75" height="60" alt="">
+            <a href="catalog.html" aria-label="Материалы ">на любой вкус</a>
             <span>new</span>
-            <a href="catalog.html">на любой вкус</a>
           </li>
           <li>
             <h3>Инструмент</h3>
-            <img src="https://via.placeholder.com/75x60" width="75" height="60" alt="Инструмент">
-            <a href="catalog.html">на все случаи</a>
+            <img src="https://via.placeholder.com/75x60" width="75" height="60" alt="">
+            <a href="catalog.html" aria-label="Инструмент ">на все случаи</a>
           </li>
           <li>
             <h3>Техника</h3>
-            <img src="https://via.placeholder.com/75x60" width="75" height="60" alt="Техника">
-            <a href="catalog.html">для стройки</a>
+            <img src="https://via.placeholder.com/75x60" width="75" height="60" alt="">
+            <a href="catalog.html" aria-label="Техника">для стройки</a>
           </li>
         </ul>
       </section>
 
       <!-- Скидки и спецпредложения -->
       <section>
-        <h2>Скидки и спецпредложения</h2>
+        <h2 class="visually-hidden">Скидки и спецпредложения</h2>
         <ul>
           <li>
             <!-- Слайдер -->
@@ -108,20 +118,20 @@
               <li>
                 <h3>Перфораторы</h3>
                 <p>Настоящие мужские игрушки</p>
-                <img src="img/index-slider-2.jpg" width="620" height="266" alt="Дрели для соседей">
+                <img src="img/index-slider-2.jpg" width="620" height="266" alt="Перфоратор">
                 <a href="catalog.html">Открыть каталог</a>
               </li>
             </ul>
           </li>
           <li>
             <h3>Скидки 50%</h3>
-            <img src="https://via.placeholder.com/300x123" width="300" height="123" alt="Скидки 50%">
-            <a href="#">На 350 товаров</a>
+            <img src="https://via.placeholder.com/300x123" width="300" height="123" alt="">
+            <a href="#" aria-label="Скидки ">На 350 товаров</a>
           </li>
           <li>
             <h3>Доставка</h3>
-            <img src="https://via.placeholder.com/300x123" width="300" height="123" alt="Бесплатная доставка">
-            <a href="#">Бесплатно</a>
+            <img src="https://via.placeholder.com/300x123" width="300" height="123" alt="">
+            <a href="#" aria-label="Доставка">Бесплатно</a>
           </li>
         </ul>
       </section>
@@ -133,7 +143,7 @@
           <li>
             <h3>Перфоратор BOSCH BFG 9000</h3>
             <img src="img/index-popular-1.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 9000">
-            <span>32500 Р.</span>
+            <del>32500 Р.</del>
             <span>25500 Р.</span>
             <div>
               <button type="button">Купить</button>
@@ -143,7 +153,7 @@
           <li>
             <h3>Перфоратор BOSCH BFG 3000</h3>
             <img src="img/index-popular-2.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 3000">
-            <span>22500 Р.</span>
+            <del>22500 Р.</del>
             <span>15500 Р.</span>
             <div>
               <button type="button">Купить</button>
@@ -153,7 +163,7 @@
           <li>
             <h3>Перфоратор BOSCH BFG 6000</h3>
             <img src="img/index-popular-3.jpg" width="218" height="170" alt="Перфоратор BOSCH BFG 6000">
-            <span>30500 Р.</span>
+            <del>30500 Р.</del>
             <span>25500 Р.</span>
             <div>
               <button type="button">Купить</button>
@@ -178,16 +188,16 @@
       <section>
         <h2>Популярные производители</h2>
         <ul>
-          <li><a href="#"><img src="img/brand-1.png" width="126" height="37" alt="Bosch"></a></li>
-          <li><a href="#"><img src="img/brand-2.png" width="123" height="40" alt="Makita"></a></li>
-          <li><a href="#"><img src="img/brand-3.png" width="146" height="44" alt="Dewalt"></a></li>
-          <li><a href="#"><img src="img/brand-4.png" width="200" height="88" alt="Интерскол"></a></li>
-          <li><a href="#"><img src="img/brand-5.png" width="169" height="31" alt="Hitachi"></a></li>
-          <li><a href="#"><img src="img/brand-6.png" width="121" height="73" alt="LG"></a></li>
-          <li><a href="#"><img src="img/brand-7.png" width="151" height="96" alt="AEG"></a></li>
-          <li><a href="#"><img src="img/brand-8.png" width="204" height="69" alt="Metabo"></a></li>
+          <li><a href="#"><img src="img/brand-1.png" width="126" height="37" alt="перейти к производителю Bosch"></a></li>
+          <li><a href="#"><img src="img/brand-2.png" width="123" height="40" alt="перейти к производителю Makita"></a></li>
+          <li><a href="#"><img src="img/brand-3.png" width="146" height="44" alt="перейти к производителю Dewalt"></a></li>
+          <li><a href="#"><img src="img/brand-4.png" width="200" height="88" alt="перейти к производителю Интерскол"></a></li>
+          <li><a href="#"><img src="img/brand-5.png" width="169" height="31" alt="перейти к производителю Hitachi"></a></li>
+          <li><a href="#"><img src="img/brand-6.png" width="121" height="73" alt="перейти к производителю LG"></a></li>
+          <li><a href="#"><img src="img/brand-7.png" width="151" height="96" alt="перейти к производителю AEG"></a></li>
+          <li><a href="#"><img src="img/brand-8.png" width="204" height="69" alt="перейти к производителю Metabo"></a></li>
         </ul>
-        <a href="catalog.html">Все популярные производители</a>
+        <a href="catalog.html">Все производители</a>
       </section>
 
       <!-- Сервисы -->
@@ -207,7 +217,7 @@
               Ведь мы неплохо заработаем, <br>
               поднимая его на ваш этаж!
             </p>
-            <img src="https://via.placeholder.com/468x261" width="468" height="261" alt="Грузовик">
+            <img src="https://via.placeholder.com/468x261" width="468" height="261" alt="">
           </li>
           <li>
             <!-- Второй -->
@@ -215,7 +225,7 @@
             <p>Если купленный у нас товар поломается или заискрит, а также в случае пожара, спровоцированного его возгоранием, вы всегда можете быть уверены в нашей гарантии. Мы обменяем сгоревший товар на новый. <br>
               Дом уж восстановите как-нибудь сами.
             </p>
-            <img src="https://via.placeholder.com/389x283" width="389" height="283" alt="Гарантия">
+            <img src="https://via.placeholder.com/389x283" width="389" height="283" alt="">
           </li>
           <li>
             <!-- Третий -->
@@ -223,7 +233,7 @@
             <p>Залезть в долговую яму стало проще! <br>
               Кредитные консультанты придут вам на помощь.
             </p>
-            <img src="https://via.placeholder.com/465x285" width="465" height="285" alt="Кредиты">
+            <img src="https://via.placeholder.com/465x285" width="465" height="285" alt="">
             <button type="button">Отправить заявку</button>
           </li>
         </ul>
@@ -247,10 +257,12 @@
         <div>
           <h3>Контакты</h3>
           <p>Вы можете забрать товар сами, заехав в наш офис:</p>
-          <a href="https://yandex.by/maps/213/moscow/?ll=37.532110%2C55.738116&mode=search&oid=1080024147&ol=biz&z=14.45" target="_blank">
-            <img src="img/map.png" width="300" height="158" alt="Карта - как проехать">
+          <a href="map.html">
+            <img src="img/map-small.png" width="300" height="158" alt="улица Большая конюшенная">
           </a>
-          <button type="button">Заблудились? Напишите нам!</button>
+          <!-- <button type="button">Заблудились? Напишите нам!</button> -->
+          <!-- на случай отключения js делаем ссылку на страницу contact-us, если js включен - показать попап -->
+          <a href="contact-us.html">Заблудились? Напишите нам!</a>
         </div>
       </article>
     </main>
@@ -283,15 +295,58 @@
       <p>© 2010–2019 Компания «Техномарт» <br>Все права защищены</p>
 
       <ul>
-        <li><a href="#">Вконтакте</a></li>
-        <li><a href="#">Фэйсбук</a></li>
-        <li><a href="#">Инстаграм</a></li>
+        <li>
+          <a href="#">
+            <span class="visually-hidden">Вконтакте</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="visually-hidden">Фэйсбук</span>
+          </a>
+        </li>
+        <li>
+          <a href="#">
+            <span class="visually-hidden">Инстаграм</span>
+          </a>
+        </li>
       </ul>
 
       <p>Обратная связь: <br><a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
 
       <p>Разработано — <br><a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">htmlacademy.ru</a></p>
     </footer>
+
+
+    <section>
+      <h2 class="visually-hidden">Обратная связь</h2>
+      <form action="https://echo.htmlacademy.ru" method="post">
+        <label>
+          Ваше имя:
+          <input type="text" name="name" placeholder="Имя Фамилия">
+        </label>
+        <label>
+          Ваш e-mail:
+          <input type="text" name="email" placeholder="email@example.com">
+        </label>
+        <label>
+          Текст письма:
+          <textarea rows="5" cols="70" placeholder="В свободной форме" required></textarea>
+        </label>
+        <button type="submit">Отправить</button>
+        <button type="button">
+          <span class="visually-hidden">Закрыть</span>
+        </button>
+      </form>
+    </section>
+
+    <section>
+      <h2 class="visually-hidden">Как нас найти</h2>
+      <img src="img/map-big.png" width="940" height="446" alt="ул. Большая конюшенная 19">
+      <button type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </section>
 
   </body>
 </html>
