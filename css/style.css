@@ -1,0 +1,469 @@
+/* ------------------- БАЗОВЫЕ СТИЛИ ------------------- */
+
+/* cuprum-regular - cyrillic_latin */
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Cuprum Regular'), local('Cuprum-Regular'),
+       url('../fonts/cuprum-v11-cyrillic_latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/cuprum-v11-cyrillic_latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* cuprum-italic - cyrillic_latin */
+@font-face {
+  font-family: 'Cuprum';
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: local('Cuprum Italic'), local('Cuprum-Italic'),
+       url('../fonts/cuprum-v11-cyrillic_latin-italic.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/cuprum-v11-cyrillic_latin-italic.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* cuprum-700 - cyrillic_latin */
+@font-face {
+  font-family: 'Cuprum';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('Cuprum Bold'), local('Cuprum-Bold'),
+       url('../fonts/cuprum-v11-cyrillic_latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/cuprum-v11-cyrillic_latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+/* pt-sans-regular - latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: local('PT Sans'), local('PTSans-Regular'),
+       url('../fonts/pt-sans-v11-latin-regular.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/pt-sans-v11-latin-regular.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+/* pt-sans-700 - latin */
+@font-face {
+  font-family: 'PT Sans';
+  font-style: normal;
+  font-weight: 700;
+  font-display: swap;
+  src: local('PT Sans Bold'), local('PTSans-Bold'),
+       url('../fonts/pt-sans-v11-latin-700.woff2') format('woff2'), /* Chrome 26+, Opera 23+, Firefox 39+ */
+       url('../fonts/pt-sans-v11-latin-700.woff') format('woff'); /* Chrome 6+, Firefox 3.6+, IE 9+, Safari 5.1+ */
+}
+
+html {
+  box-sizing: border-box;
+}
+
+*, *:before, *:after {
+  box-sizing: inherit;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: "Cuprum", sans-serif;
+}
+
+a {
+  text-decoration: none;
+}
+
+
+
+
+
+
+
+/* ------------------- КОМПОНЕНТЫ ------------------- */
+
+.visually-hidden {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: -1px;
+  padding: 0;
+  overflow: hidden;
+  border: 0;
+  clip: rect(0 0 0 0)
+}
+
+.logo {
+  background-color: #ee3643;
+  box-shadow: 0 5px 0 0 #b52933;
+}
+
+.logo:hover,
+.logo:focus {
+  background-color: #ca2c37;
+  box-shadow: 0 5px 0 0 #9a212a;
+}
+
+.logo:active {
+  background-color: #ba2732;
+  box-shadow: 0 5px 0 0 #8e1e26;
+}
+
+.title {
+  font-size: 30px;
+  line-height: 30px;
+  text-transform: uppercase;
+}
+
+.title--dark {
+  color: black;
+}
+
+.title--colored {
+  color: #32425c;
+}
+
+.title--blocked {
+  padding: 34px 30px;
+}
+
+.index-page .title--blocked {
+  background-color: #f9f5f0;
+}
+
+.catalog-page .title--blocked {
+  background-color: #f2f6f8;
+}
+
+.button {
+  text-align: center;
+  text-transform: uppercase;
+  border: none;
+}
+
+.button--action {
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #ee3643;
+}
+
+.button--action:hover,
+.button--action:focus {
+  background-color: #ca2c37;
+}
+
+.button--action:active {
+  background-color: #ba2732;
+}
+
+.button--buy {
+  color: white;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: #63a63e;
+  box-shadow: inset 0 -3px 0 0 #367315;
+}
+
+.button--buy:hover,
+.button--buy:focus {
+  background-color: #5fbb2d;
+}
+
+.button--buy:active {
+  background-color: #518534;
+  box-shadow: none;
+}
+
+.button--like {
+  color: #32425c;
+  font-size: 14px;
+  line-height: 18px;
+  box-shadow: inset 0 0 0 3px #63a63e;
+  background-color: white;
+}
+
+.button--like:hover,
+.button--like:focus {
+  box-shadow: inset 0 0 0 3px #32425c;
+}
+
+.button--like:active {
+  color: rgba(50, 66, 92, 0.3);
+  box-shadow: inset 0 0 0 3px #c1c6ce;
+}
+
+.catalog__list {
+  list-style: none;
+}
+
+.catalog-item__title {
+  font: 700 18px/20px "PT Sans", sans-serif;
+  color: black;
+}
+
+.catalog-item__old-price {
+  font: 700 17px/18px "PT Sans", sans-serif;
+  color: #999999;
+}
+
+.catalog-item__price {
+  font: 700 17px/18px "PT Sans", sans-serif;
+  color: white;
+  background-color: #ee3643;
+}
+
+.sticker {
+  color: white;
+  font-size: 16px;
+  background-color: #ee3643;
+}
+
+
+
+
+
+
+/* ------------------- МОДУЛИ ------------------- */
+
+.header {
+  background-color: #f4f7f9;
+}
+
+.header__shop-title {
+  color: #ee3643;
+  font-size: 16px;
+  line-height: 23px;
+  font-style: italic;
+}
+
+.header__phone {
+  color: #ee3643;
+  font-size: 21px;
+  line-height: 21px;
+}
+
+.header__address {
+  color: #32425c;
+  font-size: 14px;
+  line-height: 24px;
+}
+
+.header__user-container ul {
+  list-style: none;
+}
+
+.header__user-button {
+  color: black;
+  font-size: 21px;
+  line-height: 21px;
+  text-align: center;
+  background-color: white;
+  border: none;
+}
+
+.header__user-button:hover,
+.header__user-button:focus {
+  color: #ee3643;
+}
+
+.header__user-button:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.header__user-link {
+  color: #32425c;
+  font-size: 16px;
+  line-height: 18px;
+  text-decoration: underline;
+}
+
+.header__user-link:hover,
+.header__user-link:focus {
+  color: #ee3643;
+}
+
+.header__user-link:active {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.header__top-panel {
+  background-color: #293449;
+}
+
+.header__top-panel ul {
+  list-style: none;
+}
+
+.header__search-input {
+  color: white;
+  font-size: 17px;
+  line-height: 18px;
+  background-color: transparent;
+  border: none;
+}
+
+.header__search-input:hover {
+  background-color: #212a3a;
+}
+
+.header__search-input:focus {
+  color: black;
+  background-color: white;
+}
+
+.header__search-button {
+  text-align: center;
+  border: none;
+  background-color: transparent;
+}
+
+.header__search-input::placeholder,
+.header__shop-button {
+  color: white;
+  font-size: 17px;
+  line-height: 18px;
+}
+
+.header__shop-button:hover {
+  background-color: #212a3a;
+}
+
+.header__shop-button:active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #161d29;
+}
+
+.header__shop-button--checkout {
+  background-color: #63a63e;
+}
+
+.header__shop-button--checkout:hover {
+  background-color: #5fbb2d;
+}
+
+.header__shop-button--checkout:active {
+  color: rgba(255, 255, 255, 0.6);
+  background-color: #518534;
+}
+
+.main-nav {
+  color: white;
+  font-size: 17px;
+  line-height: 17px;
+  background-color: #32425c;
+  box-shadow: inset 0 -5px 0 0 #293449;
+}
+
+.main-nav__list {
+  list-style: none;
+}
+
+.main-nav__item {
+  color: white;
+}
+
+.main-nav__item:hover,
+.main-nav__item:focus {
+  background-color: #293449;
+}
+
+.main-nav__item:active {
+  color: rgba(255, 255, 255, 0.5);
+  background-color: #1d2739;
+}
+
+.breadcrumbs__list {
+  list-style: none;
+}
+
+.breadcrumbs__item {
+  color: black;
+  font-size: 13px;
+  line-height: 18px;
+}
+
+.breadcrumbs__list-item:hover:not(:last-child) .breadcrumbs__item {
+  text-decoration: underline;
+}
+
+.about p {
+  font: 400 13px/24px "PT Sans", sans-serif;
+}
+
+.about__list {
+  list-style: none;
+  color: black;
+  font-size: 18px;
+  line-height: 20px;
+}
+
+.footer__top-panel {
+  color: #f3f7f9;
+  font-size: 18px;
+  line-height: 24px;
+  background-color: #32425c;
+}
+
+.footer__shop-list {
+  list-style: none;
+}
+
+.footer__shop-list a {
+  color: #f1f5f7;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer__catalog-list {
+  list-style: none;
+}
+
+.footer__catalog-list a {
+  color: #ffd180;
+  font-size: 18px;
+  line-height: 24px;
+}
+
+.footer__top-panel a:hover,
+.footer__top-panel a:focus {
+  text-decoration: underline;
+}
+
+.footer__top-panel a:active {
+  opacity: 0.5;
+}
+
+.footer__bottom-panel {
+  color: #ffffff;
+  font-size: 16px;
+  line-height: 18px;
+  background-color: #293449;
+}
+
+.footer__socials-list {
+  list-style: none;
+}
+
+.footer__socials-item {
+  display: flex;
+  width: 42px;
+  height: 42px;
+  background-color: #212a3a;
+  border-radius: 50%;
+}
+
+.footer__socials-item:hover,
+.footer__socials-item:focus,
+.footer__socials-item:active {
+  background-color: #ee3643;
+}
+
+.footer__email {
+  color: #ffd180;
+}
+
+.footer__email:hover,
+.footer__email:focus {
+  text-decoration: underline;
+}
+
+.footer__email:active {
+  color: #ee3643;
+}
