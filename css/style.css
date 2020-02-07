@@ -105,6 +105,11 @@ a {
   box-shadow: 0 5px 0 0 #8e1e26;
 }
 
+.text {
+  font: 400 13px/24px "PT Sans", sans-serif;
+  color: #000000;
+}
+
 .title {
   font-size: 30px;
   line-height: 30px;
@@ -112,7 +117,7 @@ a {
 }
 
 .title--dark {
-  color: black;
+  color: #000000;
 }
 
 .title--colored {
@@ -138,7 +143,7 @@ a {
 }
 
 .button--action {
-  color: white;
+  color: #ffffff;
   font-size: 14px;
   line-height: 18px;
   background-color: #ee3643;
@@ -153,8 +158,24 @@ a {
   background-color: #ba2732;
 }
 
+.button--transparent {
+  color: #ffffff;
+  font-size: 14px;
+  line-height: 18px;
+  background-color: rgba(0, 0, 0, 0.1);
+}
+
+.button--transparent:hover,
+.button--transparent:focus {
+  background-color: rgba(0, 0, 0, 0.2);
+}
+
+.button--transparent:active {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
 .button--buy {
-  color: white;
+  color: #ffffff;
   font-size: 14px;
   line-height: 18px;
   background-color: #63a63e;
@@ -176,7 +197,7 @@ a {
   font-size: 14px;
   line-height: 18px;
   box-shadow: inset 0 0 0 3px #63a63e;
-  background-color: white;
+  background-color: #ffffff;
 }
 
 .button--like:hover,
@@ -189,13 +210,82 @@ a {
   box-shadow: inset 0 0 0 3px #c1c6ce;
 }
 
+
+
+
+.radiocheck-label {
+  color: #000000;
+  font: 400 15px/20px "PT Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+.radiocheck-input:disabled + .radiocheck-label {
+  color: rgba(0, 0, 0, 0.4);
+}
+
+
+
+
+
+
+.catalog-head {
+  background-color: #f7f3ec;
+}
+
+.catalog-head__title {
+  color: #000000;
+  font: 400 13px/18px "PT Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+.catalog-head__sort-list {
+  list-style: none;
+}
+
+.catalog-head__sort-button {
+  position: relative;
+  padding: 0;
+  color: rgba(0, 0, 0, 0.18);
+  font: 400 13px/18px "PT Sans", sans-serif;
+  text-transform: uppercase;
+  background-color: transparent;
+  border: none;
+}
+
+.catalog-head__sort-button:not(.catalog-head__sort-button--active)::after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  border-bottom: 1px dotted #ee3643;
+}
+
+.catalog-head__sort-button:not(.catalog-head__sort-button--active):hover,
+.catalog-head__sort-button:not(.catalog-head__sort-button--active):focus {
+  color: #000000;
+}
+
+.catalog-head__sort-button:not(.catalog-head__sort-button--active):hover::after,
+.catalog-head__sort-button:not(.catalog-head__sort-button--active):focus::after {
+  border-bottom: 1px solid #ee3643;
+}
+
+.catalog-head__sort-button--active {
+  color: #ee3643;
+}
+
 .catalog__list {
   list-style: none;
 }
 
+.catalog-item:hover {
+  box-shadow: 0px 10px 25px 0 rgba(41, 52, 73, 0.5);
+}
+
 .catalog-item__title {
   font: 700 18px/20px "PT Sans", sans-serif;
-  color: black;
+  color: #000000;
 }
 
 .catalog-item__old-price {
@@ -205,22 +295,15 @@ a {
 
 .catalog-item__price {
   font: 700 17px/18px "PT Sans", sans-serif;
-  color: white;
+  color: #ffffff;
   background-color: #ee3643;
 }
 
 .sticker {
-  color: white;
+  color: #ffffff;
   font-size: 16px;
   background-color: #ee3643;
 }
-
-
-
-
-
-
-/* ------------------- МОДУЛИ ------------------- */
 
 .header {
   background-color: #f4f7f9;
@@ -250,11 +333,11 @@ a {
 }
 
 .header__user-button {
-  color: black;
+  color: #000000;
   font-size: 21px;
   line-height: 21px;
   text-align: center;
-  background-color: white;
+  background-color: #ffffff;
   border: none;
 }
 
@@ -292,7 +375,7 @@ a {
 }
 
 .header__search-input {
-  color: white;
+  color: #ffffff;
   font-size: 17px;
   line-height: 18px;
   background-color: transparent;
@@ -304,8 +387,8 @@ a {
 }
 
 .header__search-input:focus {
-  color: black;
-  background-color: white;
+  color: #000000;
+  background-color: #ffffff;
 }
 
 .header__search-button {
@@ -316,7 +399,7 @@ a {
 
 .header__search-input::placeholder,
 .header__shop-button {
-  color: white;
+  color: #ffffff;
   font-size: 17px;
   line-height: 18px;
 }
@@ -344,7 +427,7 @@ a {
 }
 
 .main-nav {
-  color: white;
+  color: #ffffff;
   font-size: 17px;
   line-height: 17px;
   background-color: #32425c;
@@ -356,7 +439,7 @@ a {
 }
 
 .main-nav__item {
-  color: white;
+  color: #ffffff;
 }
 
 .main-nav__item:hover,
@@ -374,7 +457,7 @@ a {
 }
 
 .breadcrumbs__item {
-  color: black;
+  color: #000000;
   font-size: 13px;
   line-height: 18px;
 }
@@ -383,13 +466,9 @@ a {
   text-decoration: underline;
 }
 
-.about p {
-  font: 400 13px/24px "PT Sans", sans-serif;
-}
-
 .about__list {
   list-style: none;
-  color: black;
+  color: #000000;
   font-size: 18px;
   line-height: 20px;
 }
@@ -467,3 +546,187 @@ a {
 .footer__email:active {
   color: #ee3643;
 }
+
+.popular-cats__list {
+  list-style: none;
+}
+
+.promo-item__title {
+  color: #ffffff;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.25;
+}
+
+.promo-item--materials {
+  background: #ffbf47 url("../img/promo-1.svg") no-repeat;
+  background-size: 44px;
+  background-position: right 43px center;
+}
+
+.promo-item--tools {
+  background: #3bbce3 url("../img/promo-2.svg") no-repeat;
+  background-size: 75px;
+  background-position: right 28px center;
+}
+
+.promo-item--machinery {
+  background: #dc91d8 url("../img/promo-3.svg") no-repeat;
+  background-size: 78px;
+  background-position: right 31px center;
+}
+
+.promo-item--discount {
+  background: #8ed78f url("../img/promo-4.svg") no-repeat;
+  background-size: 59px;
+  background-position: right 45px center;
+}
+
+.promo-item--delivery {
+  background: #ffbf47 url("../img/promo-5.svg") no-repeat;
+  background-size: 78px;
+  background-position: right 31px center;
+}
+
+.special-offer__list {
+  list-style: none;
+}
+
+.slider {
+  list-style: none;
+}
+
+.slider__header {
+  background-color: rgba(0, 0, 0, 0.4)
+}
+
+.slider__title {
+  color: #ffffff;
+  font-size: 36px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.slider__subtitle {
+  color: #ffffff;
+  font-size: 18px;
+  line-height: 1.333333;
+}
+
+.popular-goods__list {
+  list-style: none;
+}
+
+.popular-brands__list {
+  list-style: none;
+}
+
+.popular-brands__list-item:hover {
+  box-shadow: 0px 10px 25px 0 rgba(41, 52, 73, 0.5);
+}
+
+.services {
+  background-color: #f4f7f9;
+}
+
+.tabbed-slider__buttons-list {
+  list-style: none;
+}
+
+.tabbed-button {
+  color: #ffffff;
+  font-size: 21px;
+  font-weight: 700;
+  line-height: 30px;
+  background-color: #32425c;
+  border: none;
+}
+
+.tabbed-button:not(.tabbed-button--active):hover,
+.tabbed-button:not(.tabbed-button--active):focus {
+  background-color: #293449;
+}
+
+.tabbed-button--active {
+  color: #32425c;
+  background-color: #ffffff;
+}
+
+.tabbed-slider__title {
+  color: #32425c;
+  font-size: 36px;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.tabbed-content {
+  background-repeat: no-repeat;
+}
+
+.tabbed-content--delivery {
+  background-image: url("../img/services-delivery.png");
+  background-size: 468px;
+  background-position: right 131px bottom 0;
+}
+
+.tabbed-content--warranty {
+  background-image: url("../img/services-guarantee.png");
+  background-size: 389px;
+  background-position: right 122px bottom 0;
+}
+
+.tabbed-content--credit {
+  background-image: url("../img/services-credit.png");
+  background-size: 465px;
+  background-position: right 120px bottom 0;
+}
+
+.pagination__list {
+  list-style: none;
+}
+
+.pagination__link {
+  color: #000000;
+  font: 400 13px/18px "PT Sans", sans-serif;
+  text-transform: uppercase;
+  background-color: #ffffff;
+  border: 1px solid #e5e5e5;
+  border-radius: 2px;
+}
+
+.pagination__link:not(.pagination__link--active):hover,
+.pagination__link:not(.pagination__link--active):focus {
+  border-color: #bdc6ca;
+}
+
+.pagination__link:not(.pagination__link--active):active {
+  border-color: #ee3643;
+}
+
+.pagination__link--active {
+  color: white;
+  background-color: #ee3643;
+  border: 1px solid #ee3643;
+}
+
+.filter__fieldset {
+  border: none;
+}
+
+.filter__title {
+  color: #000000;
+  font: 700 17px/30px "PT Sans", sans-serif;
+  text-transform: uppercase;
+}
+
+.filter__fieldset-list {
+  list-style: none;
+}
+
+ .filter__number-input {
+  text-align: center;
+  color: #000000;
+  font: 400 17px/18px "PT Sans", sans-serif;
+  background-color: #f7f3ec;
+  border: none;
+ }

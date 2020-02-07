@@ -110,17 +110,19 @@
       <h1 class="title title--colored title--blocked">Перфораторы</h1>
 
       <!-- Карточки товаров -->
-      <section>
+      <section class="catalog">
         <header>
           <h2 class="visually-hidden">Перечень перфораторов</h2>
-          <p>
-            <span>Сортировка:</span>
-            <button type="button">По цене</button>
-            <button type="button">По типу</button>
-            <button type="button">По функционалу</button>
-            <button type="button"><span class="visually-hidden">От меньшего к большему</span></button>
-            <button type="button"><span class="visually-hidden">От большего к меньшему</span></button>
-          </p>
+          <div class="catalog-head">
+            <span class="catalog-head__title">Сортировка:</span>
+            <ul class="catalog-head__sort-list">
+              <li><button class="catalog-head__sort-button catalog-head__sort-button--active" type="button">По цене</button></li>
+              <li><button class="catalog-head__sort-button" type="button">По типу</button></li>
+              <li><button class="catalog-head__sort-button" type="button">По функционалу</button></li>
+              <li><button class="catalog-head__sort-button" type="button"><span class="visually-hidden">От меньшего к большему</span></button></li>
+              <li><button class="catalog-head__sort-button" type="button"><span class="visually-hidden">От большего к меньшему</span></button></li>
+            </ul>
+          </div>
         </header>
 
         <ul class="catalog__list">
@@ -229,88 +231,87 @@
         </ul>
 
         <!-- Пагинация -->
-        <nav aria-label="Пагинация">
-          <ol>
-            <li><a aria-current="page"><span class="visually-hidden">Страница </span>1</a></li>
-            <li><a href="#"><span class="visually-hidden">Страница </span>2</a></li>
-            <li><a href="#"><span class="visually-hidden">Страница </span>3</a></li>
-            <li><a href="#">Следующая <span class="visually-hidden">страница</span></a></li>
+        <nav class="pagination" aria-label="Пагинация">
+          <ol class="pagination__list">
+            <li>
+              <a class="pagination__link pagination__link--active" aria-current="page"><span class="visually-hidden">Страница </span>1</a>
+            </li>
+            <li>
+              <a class="pagination__link" href="#"><span class="visually-hidden">Страница </span>2</a>
+            </li>
+            <li>
+              <a class="pagination__link" href="#"><span class="visually-hidden">Страница </span>3</a>
+            </li>
+            <li>
+              <a class="pagination__link" href="#">Следующая <span class="visually-hidden">страница</span></a>
+            </li>
           </ol>
         </nav>
       </section>
 
       <!-- Фильтр -->
-      <section>
-        <h2>Фильтр</h2>
+      <section class="filter">
+        <h2 class="catalog-head catalog-head__title">Фильтр:</h2>
         <!-- Заготовка формы -->
         <form action="https://echo.htmlacademy.ru" method="post">
-          <fieldset>
-            <legend>Цена:</legend>
+          <fieldset class="filter__fieldset">
+            <legend class="filter__title">Цена:</legend>
 
             <!-- здесь будет double range slider -->
 
             <label class="visually-hidden" for="price-from">Цена от</label>
-            <input id="price-from" type="number" name="price-from">
+            <input class="filter__number-input" id="price-from" type="number" name="price-from">
             <!-- спан для тире между полями -->
             <span aria-hidden="true">&mdash;</span>
             <label class="visually-hidden" for="price-to">Цена до</label>
-            <input id="price-to" type="number" name="price-to">
+            <input class="filter__number-input" id="price-to" type="number" name="price-to">
           </fieldset>
 
-          <fieldset>
-            <legend>Производители:</legend>
-            <ul>
+          <fieldset class="filter__fieldset">
+            <legend class="filter__title">Производители:</legend>
+            <ul class="filter__fieldset-list">
               <li>
-                <label>
-                  <input type="checkbox" name="bosch" checked>
-                  Bosch
-                </label>
+                <input class="visually-hidden radiocheck-input radiocheck-input--check" id="check1" type="checkbox" name="1" checked>
+                <label class="radiocheck-label" for="check1">Bosch</label>
               </li>
+
               <li>
-                <label>
-                  <input type="checkbox" name="Интерскол">
-                  Интерскол
-                </label>
+                <input class="visually-hidden radiocheck-input radiocheck-input--check" id="check2" type="checkbox" name="2">
+                <label class="radiocheck-label" for="check2">Интерскол</label>
               </li>
+
               <li>
-                <label>
-                  <input type="checkbox" name="Makita" checked>
-                  Makita
-                </label>
+                <input class="visually-hidden radiocheck-input radiocheck-input--check" id="check3" type="checkbox" name="3">
+                <label class="radiocheck-label" for="check3">Makita</label>
               </li>
+
               <li>
-                <label>
-                  <input type="checkbox" name="Dewalt">
-                  Dewalt
-                </label>
+                <input class="visually-hidden radiocheck-input radiocheck-input--check" id="check4" type="checkbox" name="4">
+                <label class="radiocheck-label radiocheck-input--check" for="check4">Dewalt</label>
               </li>
+
               <li>
-                <label>
-                  <input type="checkbox" name="Hitachi">
-                  Hitachi
-                </label>
+                <input class="visually-hidden radiocheck-input radiocheck-input--check" id="check5" type="checkbox" name="5">
+                <label class="radiocheck-label" for="check5">Hitachi</label>
               </li>
             </ul>
           </fieldset>
 
-          <fieldset>
-            <legend>Питание:</legend>
-            <ul>
+          <fieldset class="filter__fieldset">
+            <legend class="filter__title">Питание:</legend>
+            <ul class="filter__fieldset-list">
               <li>
-                <label>
-                  <input type="radio" name="energy-type" value="" checked>
-                  Аккумуляторные
-                </label>
+                <input class="visually-hidden radiocheck__input radiocheck-input--radio" id="radio1" type="radio" name="energy-type" checked>
+                <label class="radiocheck-label" for="radio1">Аккумуляторные</label>
               </li>
+
               <li>
-                <label>
-                  <input type="radio" name="energy-type">
-                  Сетевые
-                </label>
+                <input class="visually-hidden radiocheck__input radiocheck-input--radio" id="radio2" type="radio" name="energy-type">
+                <label class="radiocheck-label" for="radio2">Сетевые</label>
               </li>
             </ul>
           </fieldset>
-          <button type="submit">Показать</button>
+          <button class="pagination__link" type="submit">Показать</button>
         </form>
       </section>
 
