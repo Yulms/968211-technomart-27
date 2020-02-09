@@ -86,7 +86,7 @@ a {
   padding: 0;
   overflow: hidden;
   border: 0;
-  clip: rect(0 0 0 0)
+  clip: rect(0 0 0 0);
 }
 
 .logo {
@@ -210,9 +210,6 @@ a {
   box-shadow: inset 0 0 0 3px #c1c6ce;
 }
 
-
-
-
 .radiocheck-label {
   color: #000000;
   font: 400 15px/20px "PT Sans", sans-serif;
@@ -222,11 +219,6 @@ a {
 .radiocheck-input:disabled + .radiocheck-label {
   color: rgba(0, 0, 0, 0.4);
 }
-
-
-
-
-
 
 .catalog-head {
   background-color: #f7f3ec;
@@ -559,33 +551,23 @@ a {
 }
 
 .promo-item--materials {
-  background: #ffbf47 url("../img/promo-1.svg") no-repeat;
-  background-size: 44px;
-  background-position: right 43px center;
+  background: #ffbf47 url("../img/promo-1.svg") right 43px center / 44px no-repeat;
 }
 
 .promo-item--tools {
-  background: #3bbce3 url("../img/promo-2.svg") no-repeat;
-  background-size: 75px;
-  background-position: right 28px center;
+  background: #3bbce3 url("../img/promo-2.svg") right 28px center / 75px no-repeat;
 }
 
 .promo-item--machinery {
-  background: #dc91d8 url("../img/promo-3.svg") no-repeat;
-  background-size: 78px;
-  background-position: right 31px center;
+  background: #dc91d8 url("../img/promo-3.svg") right 31px center / 78px no-repeat;
 }
 
 .promo-item--discount {
-  background: #8ed78f url("../img/promo-4.svg") no-repeat;
-  background-size: 59px;
-  background-position: right 45px center;
+  background: #8ed78f url("../img/promo-4.svg") right 45px center / 59px no-repeat;
 }
 
 .promo-item--delivery {
-  background: #ffbf47 url("../img/promo-5.svg") no-repeat;
-  background-size: 78px;
-  background-position: right 31px center;
+  background: #ffbf47 url("../img/promo-5.svg") right 31px center / 78px no-repeat;
 }
 
 .special-offer__list {
