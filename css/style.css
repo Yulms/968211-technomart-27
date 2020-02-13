@@ -418,10 +418,6 @@ a {
   display: none;
 }
 
-.header__user-unknown {
-  /*display: flex;*/
-}
-
 .header__user-button {
   padding: 12px;
   color: #000000;
@@ -443,16 +439,6 @@ a {
 
 .header__user-button:active {
   color: rgba(0, 0, 0, 0.3);
-}
-
-.header__user-list {
-  margin: 0;
-  padding: 0;
-  list-style: none;
-}
-
-.header__user-item {
-  display: inline-block;
 }
 
 .header__user-link {
@@ -482,8 +468,7 @@ a {
 
 .header__shop-button-list {
   display: flex;
-  margin: 0;
-  margin-left: auto;
+  margin: 0 0 0 auto;
   padding: 0;
   list-style: none;
 }
@@ -570,22 +555,22 @@ a {
   box-shadow: inset 0 -5px 0 0 #293449;
 }
 
-.main-nav__list li {
+.main-nav__item {
   flex-grow: 1;
 }
 
-.main-nav__item {
+.main-nav__link {
   display: block;
   line-height: 60px;
   color: #ffffff;
 }
 
-.main-nav__item:hover,
-.main-nav__item:focus {
+.main-nav__link:hover,
+.main-nav__link:focus {
   background-color: #293449;
 }
 
-.main-nav__item:active {
+.main-nav__link:active {
   color: rgba(255, 255, 255, 0.5);
   background-color: #1d2739;
 }
@@ -599,6 +584,7 @@ a {
 
 .breadcrumbs__link {
   display: inline-block;
+  vertical-align: middle;
   padding-top: 20px;
   padding-bottom: 20px;
   color: #000000;
@@ -663,9 +649,7 @@ a {
   justify-content: flex-end;
   flex-basis: 100%;
   max-width: 660px;
-  margin: 0;
-  margin-bottom: 34px;
-  margin-left: auto;
+  margin: 0 0 34px auto;
   padding: 0;
   list-style: none;
 }
@@ -731,12 +715,8 @@ a {
   justify-content: center;
   flex-wrap: wrap;
   flex-basis: 330px;
-  /*компенсация внешних отступов флекс элементов*/
-  margin: -2px;
-  margin-left: 33px;
-  padding: 0;
-  padding-left: 15px;
-  padding-right: 15px;
+  margin: -2px -2px -2px 33px;
+  padding: 0 15px;
   list-style: none;
 }
 
@@ -759,15 +739,13 @@ a {
 }
 
 .footer__feedback {
-  margin: 0;
-  margin-right: 13px;
+  margin: 0 13px 0 0;
   padding-left: 15px;
   padding-right: 15px;
 }
 
 .footer__creator {
   margin: 0;
-
   padding-left: 15px;
   padding-right: 15px;
 }
@@ -849,8 +827,7 @@ a {
   justify-content: space-between;
   align-items: flex-start;
   height: 266px;
-  margin: 0;
-  margin-top: 20px;
+  margin: 20px 0 0;
   padding: 0;
   list-style: none;
 }
@@ -901,16 +878,6 @@ a {
   left: 24px;
 }
 
-
-
-
-
-
-
-
-
-
-
 .commercial {
   position: relative;
   margin-top: 21px;
@@ -929,8 +896,7 @@ a {
 .minicard-list {
   display: flex;
   flex-wrap: wrap;
-  margin: 0;
-  margin-left: -20px;
+  margin: 0 0 0 -20px;
   padding: 0;
   list-style: none;
 }
@@ -947,11 +913,6 @@ a {
   justify-content: center;
   align-items: center;
   height: 145px;
-}
-
-.minicard-list__item {
-  width: 220px;
-  border: 1px solid #e5e5e5;
 }
 
 .minicard-list__item:hover {
@@ -974,15 +935,6 @@ a {
   color: #ffffff;
   background-color: #ee3643;
 }
-
-
-
-
-
-
-
-
-
 
 .services {
   margin-top: 85px;
