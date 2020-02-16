@@ -1,150 +1,187 @@
 <!DOCTYPE html>
 <html lang="ru">
-  <head>
-    <meta charset="utf-8">
-    <title>HTML Academy: Техномарт</title>
-  </head>
-  <body>
 
-    <header>
-      <a href="index.html">
+<head>
+  <meta charset="utf-8">
+  <title>HTML Academy: Техномарт</title>
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-regular.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-italic.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2">
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="page-inner">
+
+  <header class="header">
+    <!-- Лого и средняя панель хедера. -->
+    <!-- Такое использование wrapper допускается или лучше его свойства скопировать в основной блок? -->
+    <div class="header__middle-panel wrapper">
+      <a class="logo header__logo" href="index.html">
         <img src="img/logo-header.png" width="109" height="19" alt="Перейти на главную страницу">
       </a>
+      <em class="header__shop-title">Интернет-магазин строительных материалов <br> и инструментов для ремонта</em>
 
-      <p>Интернет-магазин строительных материалов и инструментов для ремонта</p>
-
-      <div>
-        <p>+7 (812) 555-05-55</p>
-        <p>г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
+      <div class="header__contacts">
+        <p class="header__phone">+7 (812) 555-05-55</p>
+        <p class="header__address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
 
       <!-- User area -->
-      <div>
+      <div class="header__user-area header__user-unknown">
         <!-- Или -->
-        <ul>
-          <li><button type="button">Войти</button></li>
-          <li><button type="button">Регистрация</button></li>
-        </ul>
-
-        <!-- Или -->
-        <p>
-          <a href="#" aria-label="Войти в профайл">Равшан Джамшутович</a>
-          <a href="#"><span class="visually-hidden">Выйти</span></a>
-        </p>
-        <ul>
-          <li><a href="#">Мои заказы</a></li>
-          <li><a href="#">Личный кабинет</a></li>
+        <button class="user-button user-button--icon--login" type="button">Войти</button>
+        <button class="user-button" type="button">Регистрация</button>
+      </div>
+      <!-- Или -->
+      <div class="header__user-area header__user-logined">
+        <!-- <div> -->
+        <a class="user-button user-button--icon--account" href="#" aria-label="Войти в профайл">Равшан Джамшутович</a>
+        <a class="user-button user-button--icon--logout" href="#"><span class="visually-hidden">Выйти</span></a>
+        <!-- </div> -->
+        <ul class="header__user-list">
+          <li class="header__user-item"><a class="header__user-link" href="#">Мои заказы</a></li>
+          <li class="header__user-item"><a class="header__user-link" href="#">Личный кабинет</a></li>
         </ul>
       </div>
+    </div>
 
-      <!-- Заготовка формы поиска -->
-      <form action="https://echo.htmlacademy.ru" method="post" role="search">
-        <label>
-          Поиск:
-          <input type="search" name="search">
-        </label>
-        <button type="submit">Найти</button>
-      </form>
-
-      <ul>
-        <li>
-          <a href="#">
-            Закладки: <span class="visually-hidden">Товаров: </span>
-            0
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            Корзина: <span class="visually-hidden">Товаров: </span>
-            0
-          </a>
-        </li>
-        <li><a href="#">Оформить заказ</a></li>
-      </ul>
-
-      <nav>
-        <ul>
-          <li><a>Главная</a></li>
-          <li><a href="#">Компания</a></li>
-          <li><a href="catalog.html">Каталог</a></li>
-          <li><a href="#">Новости</a></li>
-          <li><a href="#">Спецпредложения</a></li>
-          <li><a href="#">Доставка</a></li>
-          <li><a href="#">Контакты</a></li>
+    <!-- Верхняя панель хедера -->
+    <div class="header__top-panel">
+      <div class="wrapper">
+        <!-- Заготовка формы поиска -->
+        <form class="search-form" action="https://echo.htmlacademy.ru" method="post" role="search">
+          <label class="search-form__label" for id="search-input">
+            <span class="visually-hidden">Поиск:</span>
+          </label>
+          <input class="search-form__input" id="search-input" type="text" name="search" placeholder="Поиск:">
+          <button class="search-form__button" type="submit">
+            <span class="visually-hidden">Найти</span>
+          </button>
+        </form>
+        <ul class="header__shop-button-list">
+          <li>
+            <a class="header__shop-button header__shop-button--bookmarks" href="#">
+              Закладки: <span class="visually-hidden">Товаров: </span>
+              0
+            </a>
+          </li>
+          <li>
+            <a class="header__shop-button header__shop-button--cart" href="#">
+              Корзина: <span class="visually-hidden">Товаров: </span>
+              0
+            </a>
+          </li>
+          <li><a class="header__shop-button header__shop-button--checkout" href="#">Оформить заказ</a></li>
         </ul>
-      </nav>
-    </header>
+      </div>
+    </div>
 
-    <main>
+    <!-- Навигация -->
+    <nav class="main-nav wrapper">
+      <ul class="main-nav__list">
+        <li class="main-nav__item"><a class="main-nav__link">Главная</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="#">Компания</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="catalog.html">Каталог</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="#">Новости</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="#">Спецпредложения</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="#">Доставка</a></li>
+        <li class="main-nav__item"><a class="main-nav__link" href="#">Контакты</a></li>
+      </ul>
+    </nav>
+
+  </header>
+
+  <main>
+    <section class="contact">
       <h2 class="visually-hidden">Обратная связь</h2>
-      <form action="https://echo.htmlacademy.ru" method="post">
-        <label>
-          Ваше имя:
-          <input type="text" name="name" placeholder="Имя Фамилия">
-        </label>
-        <label>
-          Ваш e-mail:
-          <input type="text" name="email" placeholder="email@example.com">
-        </label>
-        <label>
-          Текст письма:
-          <textarea rows="5" cols="70" placeholder="В свободной форме" required></textarea>
-        </label>
-        <button type="submit">Отправить</button>
-        <button type="button">
-          <span class="visually-hidden">Закрыть</span>
-        </button>
+      <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
+        <div class="contact-form__align modal-wrapper">
+          <label class="label">
+            Ваше имя:
+            <input class="field-input contact-form__input--name" type="text" name="name" placeholder="Имя Фамилия">
+          </label>
+          <label class="label">
+            Ваш e-mail:
+            <input class="field-input contact-form__input--email" type="text" name="email" placeholder="email@example.com">
+          </label>
+          <label class="label label--fullwidth">
+            Текст письма:
+            <textarea class="field-input contact-form__input--letter" rows="5" cols="70" placeholder="В свободной форме" required></textarea>
+          </label>
+        </div>
+        <div class="modal__footer">
+          <div class="modal-wrapper">
+            <button class="button button--action" type="submit">Отправить</button>
+          </div>
+        </div>
       </form>
-    </main>
 
-    <footer>
-      <a>
-        <img src="img/logo-footer.png" width="138" height="23" alt="Логотип «Техномарт»">
-      </a>
+      <button class="button-close" type="button">
+        <span class="visually-hidden">Закрыть</span>
+      </button>
+    </section>
+  </main>
 
-      <ul>
-        <li><a href="#">Компания</a></li>
-        <li><a href="#">Новости</a></li>
-        <li><a href="catalog.html">Каталог</a></li>
-        <li><a href="#">Доставка</a></li>
-        <li><a href="#">Контакты</a></li>
-      </ul>
+  <footer class="footer">
 
-      <p>
-        г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
-        +7 (812) 555-05-55
-      </p>
+    <div class="footer__top-panel">
+      <div class="wrapper">
+        <a class="logo footer__logo" href="index.html">
+          <img src="img/logo-footer.png" width="138" height="23" alt="Перейти на главную страницу">
+        </a>
 
-      <ul>
-        <li><a href="catalog.html">Материалы</a></li>
-        <li><a href="catalog.html">Техника</a></li>
-        <li><a href="catalog.html">Инструмент</a></li>
-        <li><a href="#">Спецпредложения</a></li>
-      </ul>
+        <ul class="footer__shop-list">
+          <li class="footer__shop-item"><a href="#">Компания</a></li>
+          <li class="footer__shop-item"><a href="#">Новости</a></li>
+          <li class="footer__shop-item"><a href="catalog.html">Каталог</a></li>
+          <li class="footer__shop-item"><a href="#">Доставка</a></li>
+          <li class="footer__shop-item"><a href="#">Контакты</a></li>
+        </ul>
 
-      <p>© 2010–2019 Компания «Техномарт» <br>Все права защищены</p>
+        <p class="footer__address">
+          г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8 <br>
+          +7 (812) 555-05-55
+        </p>
 
-      <ul>
-        <li>
-          <a href="#">
-            <span class="visually-hidden">Вконтакте</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="visually-hidden">Фэйсбук</span>
-          </a>
-        </li>
-        <li>
-          <a href="#">
-            <span class="visually-hidden">Инстаграм</span>
-          </a>
-        </li>
-      </ul>
+        <ul class="footer__catalog-list">
+          <li class="footer__minicard-list__item"><a href="catalog.html">Материалы</a></li>
+          <li class="footer__minicard-list__item"><a href="catalog.html">Техника</a></li>
+          <li class="footer__minicard-list__item"><a href="catalog.html">Инструмент</a></li>
+          <li class="footer__minicard-list__item"><a href="#">Спецпредложения</a></li>
+        </ul>
+      </div>
+    </div>
 
-      <p>Обратная связь: <br><a href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
+    <div class="footer__bottom-panel">
+      <div class="wrapper">
+        <p class="footer__copyright">© 2010–2019 Компания «Техномарт» <br>Все права защищены</p>
 
-      <p>Разработано — <br><a href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">htmlacademy.ru</a></p>
-    </footer>
-  </body>
+        <ul class="footer__socials-list">
+          <li class="footer__socials-item">
+            <a class="footer__socials-link footer__socials-link--type--vk" href="#">
+              <span class="visually-hidden">Вконтакте</span>
+            </a>
+          </li>
+          <li class="footer__socials-item">
+            <a class="footer__socials-link footer__socials-link--type--fb" href="#">
+              <span class="visually-hidden">Фэйсбук</span>
+            </a>
+          </li>
+          <li class="footer__socials-item">
+            <a class="footer__socials-link footer__socials-link--type--inst" href="#">
+              <span class="visually-hidden">Инстаграм</span>
+            </a>
+          </li>
+        </ul>
+
+        <p class="footer__feedback">Обратная связь: <br><a class="footer__email" href="mailto:mail@htmlacademy.ru">mail@htmlacademy.ru</a></p>
+
+        <p class="footer__creator">Разработано — <br><a class="footer__email" href="https://htmlacademy.ru/intensive/htmlcss" target="_blank">htmlacademy.ru</a></p>
+      </div>
+    </div>
+
+  </footer>
+</body>
+
 </html>
