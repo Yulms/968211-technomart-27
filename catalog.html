@@ -11,7 +11,7 @@
   <link rel="stylesheet" href="css/style.css">
 </head>
 
-<body class="page-inner">
+<body class="page-catalog">
 
   <header class="header">
     <!-- Лого и средняя панель хедера. -->
@@ -51,7 +51,7 @@
       <div class="wrapper">
         <!-- Заготовка формы поиска -->
         <form class="search-form" action="https://echo.htmlacademy.ru" method="post" role="search">
-          <label class="search-form__label" for id="search-input">
+          <label class="search-form__label" for="search-input">
             <span class="visually-hidden">Поиск:</span>
           </label>
           <input class="search-form__input" id="search-input" type="text" name="search" placeholder="Поиск:">
@@ -122,14 +122,40 @@
         <header>
           <h2 class="visually-hidden">Перечень перфораторов</h2>
           <div class="catalog-head">
+
             <span class="catalog-head__title">Сортировка:</span>
-            <ul class="catalog-head__sort-list">
-              <li><button class="catalog-head__sort-button catalog-head__sort-button--active" type="button">По цене</button></li>
-              <li><button class="catalog-head__sort-button" type="button">По типу</button></li>
-              <li><button class="catalog-head__sort-button" type="button">По функционалу</button></li>
-              <li><button class="catalog-head__sort-button" type="button"><span class="visually-hidden">От меньшего к большему</span></button></li>
-              <li><button class="catalog-head__sort-button" type="button"><span class="visually-hidden">От большего к меньшему</span></button></li>
+
+            <ul class="catalog-head__sort-list catalog-head__sort-list--sort-by">
+              <li class="catalog-head__sort-item">
+                <button class="catalog-head__sort-button catalog-head__sort-button--active" type="button">По цене</button>
+              </li>
+              <li class="catalog-head__sort-item">
+                <button class="catalog-head__sort-button" type="button">По типу</button>
+              </li>
+              <li class="catalog-head__sort-item">
+                <button class="catalog-head__sort-button" type="button">По функционалу</button>
+              </li>
             </ul>
+
+            <ul class="catalog-head__sort-list catalog-head__sort-list--sort-direction">
+              <li class="catalog-head__sort-item">
+                <button class="catalog-head__sort-button catalog-head__sort-button--active catalog-head__sort-button--icon-only" type="button">
+                  <span class="visually-hidden">От меньшего к большему</span>
+                  <svg width="11" height="10" viewbox="0 0 11 10" fill="currentColor">
+                    <polygon points="0,10 6,0 11,10" />
+                  </svg>
+                </button>
+              </li>
+              <li class="catalog-head__sort-item">
+                <button class="catalog-head__sort-button catalog-head__sort-button--icon-only" type="button">
+                  <span class="visually-hidden">От большего к меньшему</span>
+                  <svg width="11" height="10" viewbox="0 0 11 10" fill="currentColor">
+                    <polygon points="0,0 11,0 6,10" />
+                  </svg>
+                </button>
+              </li>
+            </ul>
+
           </div>
         </header>
 
@@ -437,16 +463,12 @@
 
   </footer>
 
-  <section class="modal cart-add">
+  <section class="modal modal--classic cart-add">
     <h2 class="visually-hidden">Подтверждение добавления товара в корзину</h2>
-    <div class="modal-wrapper">
-      <strong class="cart-add__text">Товар добавлен в корзину!</strong>
-    </div>
+    <strong class="cart-add__text">Товар добавлен в корзину!</strong>
     <div class="modal__footer">
-      <div class="modal-wrapper">
-        <button class="button button--action" type="button">Оформить заказ</button>
-        <button class="button button--secondary" type="button">Продолжить покупки</button>
-      </div>
+      <button class="button button--action" type="button">Оформить заказ</button>
+      <button class="button button--secondary" type="button">Продолжить покупки</button>
     </div>
     <button class="button-close" type="button">
       <span class="visually-hidden">Закрыть</span>

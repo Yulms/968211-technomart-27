@@ -51,7 +51,7 @@
       <div class="wrapper">
         <!-- Заготовка формы поиска -->
         <form class="search-form" action="https://echo.htmlacademy.ru" method="post" role="search">
-          <label class="search-form__label" for id="search-input">
+          <label class="search-form__label" for="search-input">
             <span class="visually-hidden">Поиск:</span>
           </label>
           <input class="search-form__input" id="search-input" type="text" name="search" placeholder="Поиск:">
@@ -92,28 +92,26 @@
 
   </header>
 
-  <main>
+  <main class="wrapper--thin">
     <section class="contact">
       <h2 class="visually-hidden">Обратная связь</h2>
       <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
-        <div class="contact-form__align modal-wrapper">
-          <label class="label">
+        <div class="contact-form__container">
+          <label class="field">
             Ваше имя:
             <input class="field-input contact-form__input--name" type="text" name="name" placeholder="Имя Фамилия">
           </label>
-          <label class="label">
+          <label class="field">
             Ваш e-mail:
             <input class="field-input contact-form__input--email" type="text" name="email" placeholder="email@example.com">
           </label>
-          <label class="label label--fullwidth">
+          <label class="field field--fullwidth">
             Текст письма:
             <textarea class="field-input contact-form__input--letter" rows="5" cols="70" placeholder="В свободной форме" required></textarea>
           </label>
         </div>
         <div class="modal__footer">
-          <div class="modal-wrapper">
-            <button class="button button--action" type="submit">Отправить</button>
-          </div>
+          <button class="button button--action" type="submit">Отправить</button>
         </div>
       </form>
 
