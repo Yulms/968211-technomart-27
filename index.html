@@ -34,10 +34,10 @@
       </div>
       <!-- Или -->
       <div class="header__user-area header__user-logined">
-        <!-- <div> -->
+
         <a class="user-button user-button--icon--account" href="#" aria-label="Войти в профайл">Равшан Джамшутович</a>
         <a class="user-button user-button--icon--logout" href="#"><span class="visually-hidden">Выйти</span></a>
-        <!-- </div> -->
+
         <ul class="header__user-list">
           <li class="header__user-item"><a class="header__user-link" href="#">Мои заказы</a></li>
           <li class="header__user-item"><a class="header__user-link" href="#">Личный кабинет</a></li>
@@ -95,8 +95,6 @@
 
     <h1 class="visually-hidden">Интернет-магазин «Техномарт»</h1>
 
-    <!-- Промо-блок - и зачем я его создал? -->
-    <!-- <div class="promo"> -->
     <!-- Популярные категории -->
     <section class="popular-cats wrapper">
       <h2 class="visually-hidden">Популярные категории</h2>
@@ -128,10 +126,10 @@
 
             <!-- переключение - влево-вправо -->
             <button class="slider__toggle slider__toggle--left" type="button">
-              <span class="visually-hidden">Назад</span>
+              <span class="visually-hidden">Предыдущий слайд</span>
             </button>
             <button class="slider__toggle slider__toggle--right" type="button">
-              <span class="visually-hidden">Вперед</span>
+              <span class="visually-hidden">Следующий слайд</span>
             </button>
             <!-- ссылки-точки -->
             <ul class="slider__point-list">
@@ -165,19 +163,19 @@
             </ul>
           </div>
         </li>
+        <div class="special-offer__promo-container">
+          <li class="promo-item promo-item--discount">
+            <h3 class="promo-item__title">Скидки 50%</h3>
+            <a class="button button--transparent" href="#" aria-label="Скидки ">На 350 товаров</a>
+          </li>
 
-        <li class="promo-item promo-item--discount">
-          <h3 class="promo-item__title">Скидки 50%</h3>
-          <a class="button button--transparent" href="#" aria-label="Скидки ">На 350 товаров</a>
-        </li>
-
-        <li class="promo-item promo-item--delivery">
-          <h3 class="promo-item__title">Доставка</h3>
-          <a class="button button--transparent" href="#" aria-label="Доставка">Бесплатно</a>
-        </li>
+          <li class="promo-item promo-item--delivery">
+            <h3 class="promo-item__title">Доставка</h3>
+            <a class="button button--transparent" href="#" aria-label="Доставка">Бесплатно</a>
+          </li>
+        </div>
       </ul>
     </section>
-    <!-- </div> -->
 
     <!-- Популярные товары -->
     <section class="commercial wrapper">
@@ -441,7 +439,7 @@
       </div>
     </form>
 
-    <button class="button button-close" type="button">
+    <button class="button-close" type="button">
       <span class="visually-hidden">Закрыть</span>
     </button>
   </section>
