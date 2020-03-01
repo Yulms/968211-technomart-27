@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Техномарт</title>
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-regular.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-italic.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -347,7 +347,7 @@
         <a href="map.html">
           <img src="img/map-small.png" width="300" height="158" alt="улица Большая конюшенная">
         </a>
-        <a class="button button--action" href="contact-us.html">Заблудились? Напишите нам!</a>
+        <a class="button button--action button--modal--contact" href="contact-us.html">Заблудились? Напишите нам!</a>
       </div>
     </article>
   </main>
@@ -415,7 +415,7 @@
 
 
 
-  <section class="contact modal modal--classic">
+  <section class="modal modal--classic modal--contact">
     <h2 class="visually-hidden">Обратная связь</h2>
     <form class="contact-form" action="https://echo.htmlacademy.ru" method="post">
       <div class="contact-form__container">
@@ -425,11 +425,11 @@
         </label>
         <label class="field">
           Ваш e-mail:
-          <input class="field-input contact-form__input--email" type="text" name="email" placeholder="email@example.com">
+          <input class="field-input contact-form__input--email" type="email" name="email" placeholder="email@example.com">
         </label>
         <label class="field field--fullwidth">
           Текст письма:
-          <textarea class="field-input contact-form__input--letter" rows="5" cols="70" placeholder="В свободной форме" required></textarea>
+          <textarea class="field-input contact-form__input--letter" name="contact-text" rows="5" cols="70" placeholder="В свободной форме"></textarea>
         </label>
       </div>
       <div class="modal__footer">
@@ -450,6 +450,7 @@
     </button>
   </section>
 
+  <script src="js/script.js"></script>
 </body>
 
 </html>

@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Техномарт</title>
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-regular.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-italic.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -99,15 +99,15 @@
         <div class="contact-form__container">
           <label class="field">
             Ваше имя:
-            <input class="field-input contact-form__input--name" type="text" name="name" placeholder="Имя Фамилия">
+            <input class="field-input contact-form__input--name" type="text" name="name" placeholder="Имя Фамилия" required>
           </label>
           <label class="field">
             Ваш e-mail:
-            <input class="field-input contact-form__input--email" type="text" name="email" placeholder="email@example.com">
+            <input class="field-input contact-form__input--email" type="text" name="email" placeholder="email@example.com" required>
           </label>
           <label class="field field--fullwidth">
             Текст письма:
-            <textarea class="field-input contact-form__input--letter" rows="5" cols="70" placeholder="В свободной форме" required></textarea>
+            <textarea class="field-input contact-form__input--letter" name="contact-text" rows="5" cols="70" placeholder="В свободной форме" required></textarea>
           </label>
         </div>
         <div class="modal__footer">

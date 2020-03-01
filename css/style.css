@@ -425,10 +425,14 @@ a {
 }
 
 .radiocheck__label {
+  display: inline-block;
+  vertical-align: middle;
+  max-width: 100%;
   padding-left: 35px;
   color: #000000;
   font: 400 15px/20px "PT Sans", sans-serif;
   text-transform: uppercase;
+  word-wrap: break-word;
 }
 
 .radiocheck__input:disabled + .radiocheck-label {
@@ -777,6 +781,7 @@ textarea.field-input {
 }
 
 .header__shop-button {
+  min-height: 42px;
   color: #ffffff;
   font-size: 17px;
   line-height: 18px;
@@ -1242,14 +1247,65 @@ textarea.field-input {
   margin-bottom: 8px;
 }
 
+@keyframes bounce {
+  0% {
+    /* transform: translateX(-50%); */
+    transform: translate(-50%, -200%);
+  }
+
+  70% {
+    transform: translate(-50%, -47%);
+  }
+
+  90% {
+    transform: translate(-50%, -51%);
+  }
+
+  100% {
+    transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes shake {
+  0%,
+  100% {
+    transform: translate(-50%, -50%);
+  }
+
+  10%,
+  30%,
+  50%,
+  70%,
+  90% {
+    transform: translate(-51%, -50%);
+  }
+
+  20%,
+  40%,
+  60%,
+  80% {
+    transform: translate(-49%, -50%);
+  }
+}
+
 .modal {
-  position: absolute;
+  position: fixed;
+  display: none;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   z-index: 100;
   background-color: #ffffff;
   box-shadow: 0px 20px 40px -15px rgba(0, 0, 0, 0.75);
+}
+
+.modal--show {
+  display: block;
+  animation: bounce 0.4s;
+}
+
+.modal--error {
+  animation: shake 0.6s;
 }
 
 .modal--classic {
@@ -1279,11 +1335,6 @@ textarea.field-input {
 }
 
 /* Временные стили */
-.contact.modal {
-  top: auto;
-  bottom: -700px;
-}
-
 .map.modal {
   top: auto;
   bottom: -1250px;
@@ -1820,6 +1871,7 @@ textarea.field-input {
 }
 
 .filter__fieldset {
+  min-width: auto;
   margin: 0 0 16px;
   padding: 0 0 26px 0;
   border: none;
@@ -1827,11 +1879,13 @@ textarea.field-input {
 }
 
 .filter__title {
+  display: block;
   width: 100%;
   margin-bottom: 14px;
   color: #000000;
   font: 700 17px/30px "PT Sans", sans-serif;
   text-transform: uppercase;
+  word-wrap: break-word;
 }
 
 .filter__list {
@@ -1856,11 +1910,15 @@ textarea.field-input {
 
 .filter__button {
   display: block;
+  min-width: 141px;
+  max-width: 100%;
   margin-top: 48px;
-  padding: 9px 39px;
+  padding: 9px;
   color: #000000;
   font: 400 13px/18px "PT Sans", sans-serif;
   text-transform: uppercase;
+  text-align: center;
+  word-wrap: break-word;
   background-color: #ffffff;
   border: 1px solid #e5e5e5;
   border-radius: 2px;

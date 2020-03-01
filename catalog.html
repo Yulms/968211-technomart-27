@@ -4,9 +4,9 @@
 <head>
   <meta charset="utf-8">
   <title>HTML Academy: Техномарт</title>
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-regular.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-italic.woff2" as="font" type="font/woff2">
-  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2">
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-italic.woff2" as="font" type="font/woff2" crossorigin>
+  <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="stylesheet" href="css/normalize.css">
   <link rel="stylesheet" href="css/style.css">
 </head>
@@ -374,13 +374,13 @@
             <legend class="filter__title">Питание:</legend>
             <ul class="filter__list">
               <li class="filter__item radiocheck">
-                <input class="visually-hidden radiocheck__input" id="radio1" type="radio" name="energy-type" checked>
+                <input class="visually-hidden radiocheck__input" id="radio1" type="radio" name="energy-type" value="battery" checked>
                 <span class="radio-box"></span>
                 <label class="radiocheck__label" for="radio1">Аккумуляторные</label>
               </li>
 
               <li class="filter__item radiocheck">
-                <input class="visually-hidden radiocheck__input" id="radio2" type="radio" name="energy-type">
+                <input class="visually-hidden radiocheck__input" id="radio2" type="radio" name="energy-type" value="socket">
                 <span class="radio-box"></span>
                 <label class="radiocheck__label" for="radio2">Сетевые</label>
               </li>
