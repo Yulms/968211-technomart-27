@@ -225,3 +225,7 @@ textarea {
 [hidden] {
   display: none;
 }
+
+frame {
+  border: none;
+}

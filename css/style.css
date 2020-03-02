@@ -1305,7 +1305,7 @@ textarea.field-input {
 }
 
 .modal--error {
-  animation: shake 0.6s;
+  animation: shake 0.4s;
 }
 
 .modal--classic {
@@ -1334,11 +1334,22 @@ textarea.field-input {
   margin-left: 20px;
 }
 
-/* Временные стили */
-.map.modal {
-  top: auto;
-  bottom: -1250px;
+.modal__map-img {
+  position: absolute;
+  top: 0;
+  left: 0;
+  z-index: 1;
+  display: block;
 }
+
+.modal__map-iframe {
+  position: relative;
+  z-index: 2;
+  display: block;
+}
+
+/* Временные стили */
+
 .cart-add.modal {
   top: auto;
   bottom: -500px;
@@ -1992,11 +2003,6 @@ textarea.field-input {
 
 /* МОДАЛЬНЫЕ ОКНА И ИХ ПОЛИФИЛЫ */
 
-/* .contact-form {
-  padding-top: 48px;
-  border-top: 7px solid #ee3643;
-} */
-
 .contact-form__container {
   display: flex;
   justify-content: space-between;
@@ -2010,10 +2016,6 @@ textarea.field-input {
   flex-grow: 1;
   margin-top: 20px;
   margin-left: 20px;
-}
-
-.map-modal__img {
-  display: block;
 }
 
 .cart-add {
