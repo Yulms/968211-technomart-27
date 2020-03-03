@@ -1360,6 +1360,7 @@ textarea.field-input {
   position: relative;
   z-index: -1;
   display: block;
+  border: none;
 }
 
 /* ------------ УНИКАЛЬНЫЕ ДЛЯ СВОЕЙ СТРАНИЦЫ МОДУЛИ ------------ */
