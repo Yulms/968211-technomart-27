@@ -7,8 +7,8 @@
   <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-regular.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-italic.woff2" as="font" type="font/woff2" crossorigin>
   <link rel="preload" href="fonts/cuprum-v11-cyrillic_latin-700.woff2" as="font" type="font/woff2" crossorigin>
-  <link rel="stylesheet" href="css/normalize.css">
-  <link rel="stylesheet" href="css/style.css">
+  <link rel="stylesheet" href="css/normalize-min.css">
+  <link rel="stylesheet" href="css/style-min.css">
 </head>
 
 <body class="page-catalog">
@@ -22,15 +22,24 @@
       <em class="header__shop-title">Интернет-магазин строительных материалов <br> и инструментов для ремонта</em>
 
       <div class="header__contacts">
-        <p class="header__phone">+7 (812) 555-05-55</p>
+        <a class="header__phone" href="tel:+78125550555">+7 (812) 555-05-55</a>
         <p class="header__address">г. Санкт-Петербург, ул. Б. Конюшенная, д. 19/8</p>
       </div>
 
       <!-- User area -->
-      <div class="header__user-area header__user-unknown">
-        <!-- Или -->
-        <button class="user-button user-button--icon--login" type="button">Войти</button>
-        <button class="user-button" type="button">Регистрация</button>
+      <div class="header__user-area">
+        <div class="header__user-unknown">
+          <button class="user-button user-button--icon--login" type="button">Войти</button>
+          <button class="user-button" type="button">Регистрация</button>
+        </div>
+        <div class="header__user-logined">
+          <a class="user-button user-button--icon--account" href="#" aria-label="Войти в профайл">Равшан Джамшутович</a>
+          <a class="user-button user-button--icon--logout" href="#"><span class="visually-hidden">Выйти</span></a>
+          <ul class="header__user-list">
+            <li class="header__user-item"><a class="header__user-link" href="#">Мои заказы</a></li>
+            <li class="header__user-item"><a class="header__user-link" href="#">Личный кабинет</a></li>
+          </ul>
+        </div>
       </div>
       <!-- Или -->
       <div class="header__user-area header__user-logined">
@@ -62,13 +71,13 @@
           <li>
             <a class="header__shop-button header__shop-button--bookmarks" href="#">
               Закладки: <span class="visually-hidden">Товаров: </span>
-              0
+              <span class="header__liked-quantity">0</span>
             </a>
           </li>
           <li>
             <a class="header__shop-button header__shop-button--cart" href="#">
               Корзина: <span class="visually-hidden">Товаров: </span>
-              0
+              <span class="header__cart-quantity">0</span>
             </a>
           </li>
           <li><a class="header__shop-button header__shop-button--checkout" href="#">Оформить заказ</a></li>
@@ -339,31 +348,31 @@
             <legend class="filter__title">Производители:</legend>
             <ul class="filter__list">
               <li class="filter__item radiocheck">
-                <input class="visually-hidden radiocheck__input" id="check1" type="checkbox" name="1" checked>
+                <input class="visually-hidden radiocheck__input" id="check1" type="checkbox" name="Bosch" checked>
                 <span class="check-box"></span>
                 <label class="radiocheck__label" for="check1">Bosch</label>
               </li>
 
               <li class="filter__item radiocheck">
-                <input class="visually-hidden radiocheck__input" id="check2" type="checkbox" name="2">
+                <input class="visually-hidden radiocheck__input" id="check2" type="checkbox" name="Интерскол">
                 <span class="check-box"></span>
                 <label class="radiocheck__label" for="check2">Интерскол</label>
               </li>
 
               <li class="filter__item radiocheck">
-                <input class="visually-hidden radiocheck__input" id="check3" type="checkbox" name="3">
+                <input class="visually-hidden radiocheck__input" id="check3" type="checkbox" name="Makita">
                 <span class="check-box"></span>
                 <label class="radiocheck__label" for="check3">Makita</label>
               </li>
 
               <li class="filter__item radiocheck">
-                <input class="visually-hidden radiocheck__input" id="check4" type="checkbox" name="4">
+                <input class="visually-hidden radiocheck__input" id="check4" type="checkbox" name="Dewalt">
                 <span class="check-box"></span>
                 <label class="radiocheck__label" for="check4">Dewalt</label>
               </li>
 
               <li class="filter__item radiocheck">
-                <input class="visually-hidden radiocheck__input" id="check5" type="checkbox" name="5">
+                <input class="visually-hidden radiocheck__input" id="check5" type="checkbox" name="Hitachi">
                 <span class="check-box"></span>
                 <label class="radiocheck__label" for="check5">Hitachi</label>
               </li>
@@ -474,6 +483,7 @@
     </button>
   </section>
 
+  <script src="js/script-min.js"></script>
 </body>
 
 </html>
