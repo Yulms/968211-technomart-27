@@ -71,7 +71,7 @@ body {
   min-width: 960px;
   margin: 0;
   padding: 0;
-  font-family: "Cuprum", sans-serif;
+  font-family: "Cuprum", Arial, sans-serif;
 
   /* Временно для модальных окон */
   position: relative;
@@ -137,7 +137,7 @@ a {
 
 .text {
   margin: 25px 0 0;
-  font: 400 13px/24px "PT Sans", sans-serif;
+  font: 400 13px/24px "PT Sans", Arial, sans-serif;
   color: #000000;
 }
 
@@ -402,10 +402,10 @@ a {
   opacity: 0.25;
 }
 
-.radiocheck__input:hover + .check-box,
-.radiocheck__input:focus + .check-box,
-.radiocheck__input:hover + .radio-box,
-.radiocheck__input:focus + .radio-box {
+.radiocheck__input:hover:not(:disabled) + .check-box,
+.radiocheck__input:focus:not(:disabled) + .check-box,
+.radiocheck__input:hover:not(:disabled) + .radio-box,
+.radiocheck__input:focus:not(:disabled) + .radio-box {
   opacity: 0.4;
 }
 
@@ -431,12 +431,12 @@ a {
   max-width: 100%;
   padding-left: 35px;
   color: #000000;
-  font: 400 15px/20px "PT Sans", sans-serif;
+  font: 400 15px/20px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
   word-wrap: break-word;
 }
 
-.radiocheck__input:disabled + .radiocheck-label {
+.radiocheck__input:disabled ~ .radiocheck__label {
   color: rgba(0, 0, 0, 0.4);
 }
 
@@ -534,7 +534,7 @@ a {
   display: block;
   width: 100%;
   padding: 7px 16px 9px;
-  font: 400 16px/18px "PT Sans", sans-serif;
+  font: 400 16px/18px "PT Sans", Arial, sans-serif;
   border: 2px solid #d7dcde;
   border-radius: 3px;
   outline: none;
@@ -557,7 +557,7 @@ textarea.field-input {
 }
 
 .field-input::placeholder {
-  font: 400 13px/18px "PT Sans", sans-serif;
+  font: 400 13px/18px "PT Sans", Arial, sans-serif;
   color: #999999;
 }
 
@@ -923,7 +923,7 @@ textarea.field-input {
   padding-top: 20px;
   padding-bottom: 20px;
   color: #000000;
-  font: 400 13px/18px "PT Sans", sans-serif;
+  font: 400 13px/18px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
 }
 
@@ -1029,8 +1029,10 @@ textarea.field-input {
   line-height: 24px;
 }
 
-.footer__top-panel a:hover,
-.footer__top-panel a:focus {
+.footer__shop-list a:hover,
+.footer__shop-list a:focus,
+.footer__catalog-list a:hover,
+.footer__catalog-list a:focus {
   text-decoration: underline;
 }
 
@@ -1041,6 +1043,12 @@ textarea.field-input {
 .footer__address {
   max-width: 330px;
   margin: 0;
+}
+
+.footer__tel {
+  display: block;
+  color: inherit;
+  text-decoration: none;
 }
 
 .footer__bottom-panel {
@@ -1186,13 +1194,13 @@ textarea.field-input {
 .minicard-list__title {
   max-width: 100%;
   margin: 28px 0 11px;
-  font: 700 18px/20px "PT Sans", sans-serif;
+  font: 700 18px/20px "PT Sans", Arial, sans-serif;
   color: #000000;
 }
 
 .minicard-list__old-price {
   margin-bottom: 10px;
-  font: 700 17px/18px "PT Sans", sans-serif;
+  font: 700 17px/18px "PT Sans", Arial, sans-serif;
   color: #999999;
 }
 
@@ -1203,7 +1211,7 @@ textarea.field-input {
   margin-top: auto;
   margin-right: 10px;
   padding-left: 10px;
-  font: 700 17px/38px "PT Sans", sans-serif;
+  font: 700 17px/38px "PT Sans", Arial, sans-serif;
   color: #ffffff;
   background-color: #ee3643;
   border-radius: 3px;
@@ -1263,8 +1271,7 @@ textarea.field-input {
 
 @keyframes bounce {
   0% {
-    /* transform: translateX(-50%); */
-    transform: translate(-50%, -200%);
+    transform: translate(-50%, -250%);
   }
 
   70% {
@@ -1277,6 +1284,15 @@ textarea.field-input {
 
   100% {
     transform: translate(-50%, -50%);
+  }
+}
+
+@keyframes bounce-reverse {
+  0% {
+    transform: translate(-50%, -50%);
+  }
+  100% {
+    transform: translate(-50%, 1000px);
   }
 }
 
@@ -1315,11 +1331,19 @@ textarea.field-input {
 
 .modal--show {
   display: block;
-  animation: bounce 0.4s;
+  animation-name: bounce;
+  animation-duration: 0.4s;
+}
+
+.modal--hide {
+  display: block;
+  animation-name: bounce-reverse;
+  animation-duration: 0.4s;
+  animation-fill-mode: forwards;
 }
 
 .modal--error {
-  animation: shake 0.4s;
+  animation: shake 0.6s;
 }
 
 .modal--classic {
@@ -1827,7 +1851,7 @@ textarea.field-input {
   max-width: 100%;
   margin: 0 auto 0 0;
   color: #000000;
-  font: 400 13px/18px "PT Sans", sans-serif;
+  font: 400 13px/18px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
   word-wrap: break-word;
 }
@@ -1863,7 +1887,7 @@ textarea.field-input {
   position: relative;
   padding: 0;
   color: rgba(0, 0, 0, 0.18);
-  font: 400 13px/18px "PT Sans", sans-serif;
+  font: 400 13px/18px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
   background-color: transparent;
   border: none;
@@ -1914,7 +1938,7 @@ textarea.field-input {
   width: 100%;
   margin-bottom: 14px;
   color: #000000;
-  font: 700 17px/30px "PT Sans", sans-serif;
+  font: 700 17px/30px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
   word-wrap: break-word;
 }
@@ -1927,12 +1951,19 @@ textarea.field-input {
 
 .filter__number-input {
   width: 95px;
-  padding: 10px 0 10px 20px;
+  padding: 10px;
   text-align: center;
   color: #000000;
-  font: 400 17px/18px "PT Sans", sans-serif;
+  font: 400 17px/18px "PT Sans", Arial, sans-serif;
   background-color: #f7f3ec;
   border: none;
+  -moz-appearance: textfield;
+}
+
+.filter__number-input::-webkit-outer-spin-button,
+.filter__number-input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
 }
 
 .filter__item + .filter__item {
@@ -1946,7 +1977,7 @@ textarea.field-input {
   margin-top: 48px;
   padding: 9px;
   color: #000000;
-  font: 400 13px/18px "PT Sans", sans-serif;
+  font: 400 13px/18px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
   text-align: center;
   word-wrap: break-word;
@@ -1994,7 +2025,7 @@ textarea.field-input {
   min-width: 38px;
   padding: 9px 14px;
   color: #000000;
-  font: 400 13px/18px "PT Sans", sans-serif;
+  font: 400 13px/18px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
   background-color: #ffffff;
   border: 1px solid #e5e5e5;

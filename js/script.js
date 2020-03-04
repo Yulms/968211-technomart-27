@@ -117,6 +117,7 @@ function windowShow(evt, formClass) {
   switch (formClass) {
     case ".modal--contact":
       modalWindow = document.querySelector(".modal--contact");
+      modalWindow.classList.remove("modal--hide");
       modalWindow.classList.add("modal--show");
       contactText.focus();
       // если браузер поддерживает local storage
@@ -145,14 +146,15 @@ function windowShow(evt, formClass) {
       break;
     case ".modal--map":
       modalWindow = document.querySelector(".modal--map");
+      modalWindow.classList.remove("modal--hide");
       modalWindow.classList.add("modal--show");
       break;
     case ".cart-add":
       modalWindow = document.querySelector(".cart-add");
+      modalWindow.classList.remove("modal--hide");
       modalWindow.classList.add("modal--show");
       break;
   }
-
   // в зависимости от открытого модального окна
   // 1. записываем в переменную объект кнопки закрытия именно открытого окна
   // 2. вызываем функцию, навешиваюзую обработчик события на эту кнопку
@@ -185,12 +187,10 @@ if (contactForm) {
 //
 //
 // ЗАКРЫТИЕ ОКОН
-// закрытие окна контактов
 function addEventClose() {
   buttonClose.addEventListener("click", function(evt) {
     evt.preventDefault();
-    modalWindow.classList.remove("modal--show");
-    modalWindow.classList.remove("modal--error");
+    closeModal();
   });
 }
 
@@ -200,12 +200,24 @@ window.addEventListener("keydown", function(evt) {
   if (evt.keyCode === 27) {
     // если окно открыто
     if (modalWindow.classList.contains("modal--show")) {
-      evt.preventDefault;
-      modalWindow.classList.remove("modal--show");
-      modalWindow.classList.remove("modal--error");
+      evt.preventDefault();
+      closeModal();
     }
   }
 });
+
+function closeModal() {
+  modalWindow.classList.remove("modal--show");
+  modalWindow.classList.remove("modal--error");
+
+  modalWindow.addEventListener("animationend", function(evt) {
+    evt.preventDefault();
+    if (evt.animationName === "bounce-reverse") {
+      modalWindow.classList.remove("modal--hide");
+    }
+  });
+  modalWindow.classList.add("modal--hide");
+}
 
 //
 //
