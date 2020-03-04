@@ -41,7 +41,7 @@ if (isStorageSupport) {
 
 let buttonLogin = document.querySelector(".user-button--icon--login");
 
-buttonLogin.addEventListener("click", function(evt) {
+buttonLogin.addEventListener("click", function (evt) {
   evt.preventDefault();
   headerUser.classList.add("header__user-area--logined");
   if (isStorageSupport) {
@@ -51,7 +51,7 @@ buttonLogin.addEventListener("click", function(evt) {
 
 let buttonLogout = document.querySelector(".user-button--icon--logout");
 
-buttonLogout.addEventListener("click", function(evt) {
+buttonLogout.addEventListener("click", function (evt) {
   evt.preventDefault();
   headerUser.classList.remove("header__user-area--logined");
   if (isStorageSupport) {
@@ -64,14 +64,14 @@ buttonLogout.addEventListener("click", function(evt) {
 //
 // НАЗНАЧЕНИЕ ОБРАБОТЧИКОВ НАЖАТИЙ НА КНОПКИ ВЫЗОВА МОДАЛЬНЫХ ОКОН
 if (buttonModalContact) {
-  buttonModalContact.addEventListener("click", function(evt) {
+  buttonModalContact.addEventListener("click", function (evt) {
     evt.preventDefault();
     windowShow(evt, ".modal--contact");
   });
 }
 
 if (buttonModalMap) {
-  buttonModalMap.addEventListener("click", function(evt) {
+  buttonModalMap.addEventListener("click", function (evt) {
     evt.preventDefault();
     windowShow(evt, ".modal--map");
   });
@@ -82,7 +82,7 @@ if (buttonModalMap) {
 // ловим событие клика на body, затем отлавливаем нужное по имени класса
 let body = document.querySelector("body");
 
-body.addEventListener("click", function(evt) {
+body.addEventListener("click", function (evt) {
   // где был клик? https://learn.javascript.ru/event-delegation
   let targetPoint = evt.target;
 
@@ -166,7 +166,7 @@ function windowShow(evt, formClass) {
 //
 // ОТПРАВКА ДАННЫХ. Валидация и запись данных формы в local-storage.
 if (contactForm) {
-  contactForm.addEventListener("submit", function(evt) {
+  contactForm.addEventListener("submit", function (evt) {
     if (!contactName.value || !contactEmail.value || !contactText.value) {
       evt.preventDefault();
       // хак, чтобы анимация ошибки отрабатывала несколько раз (просто удаление и добавление класса не сработает)
@@ -188,16 +188,17 @@ if (contactForm) {
 //
 // ЗАКРЫТИЕ ОКОН
 function addEventClose() {
-  buttonClose.addEventListener("click", function(evt) {
+  buttonClose.addEventListener("click", function (evt) {
     evt.preventDefault();
     closeModal();
   });
 }
 
 // закрытие окна по нажатию esc
-window.addEventListener("keydown", function(evt) {
+window.addEventListener("keydown", function (evt) {
   // если нажата esc
   if (evt.keyCode === 27) {
+    if (!modalWindow) return;
     // если окно открыто
     if (modalWindow.classList.contains("modal--show")) {
       evt.preventDefault();
@@ -210,7 +211,7 @@ function closeModal() {
   modalWindow.classList.remove("modal--show");
   modalWindow.classList.remove("modal--error");
 
-  modalWindow.addEventListener("animationend", function(evt) {
+  modalWindow.addEventListener("animationend", function (evt) {
     evt.preventDefault();
     if (evt.animationName === "bounce-reverse") {
       modalWindow.classList.remove("modal--hide");
@@ -233,12 +234,12 @@ let btnLeft = document.querySelector(".slider__toggle--left");
 let btnRight = document.querySelector(".slider__toggle--right");
 
 if (btnLeft) {
-  btnLeft.addEventListener("click", function(evt) {
+  btnLeft.addEventListener("click", function (evt) {
     evt.preventDefault;
     toggleSlider(false);
   });
 
-  btnRight.addEventListener("click", function(evt) {
+  btnRight.addEventListener("click", function (evt) {
     evt.preventDefault;
     toggleSlider(true);
   });
@@ -286,7 +287,7 @@ function toggleSlider(isForward) {
 // НАЖАТИЕ НА ТОЧКИ СЛАЙДЕРА
 let btnPointList = document.querySelector(".slider__point-list");
 if (btnPointList) {
-  btnPointList.addEventListener("click", function(evt) {
+  btnPointList.addEventListener("click", function (evt) {
     evt.preventDefault();
 
     // где был клик? https://learn.javascript.ru/event-delegation
@@ -318,7 +319,7 @@ if (btnPointList) {
         // 2. Слайдеру с соотвествующим номером добавляем класс active
         document
           .querySelectorAll(".slider__item")
-          [i].classList.add("slider__item--active");
+        [i].classList.add("slider__item--active");
         break;
       }
     }
@@ -337,7 +338,7 @@ if (btnPointList) {
 //    добавляем активный класс такому же номеру табов
 let tabbedSlider = document.querySelector(".tabbed-slider__buttons-list");
 if (tabbedSlider) {
-  tabbedSlider.addEventListener("click", function(evt) {
+  tabbedSlider.addEventListener("click", function (evt) {
     evt.preventDefault();
     let targetButton = evt.target;
     // если юзер не попал в button - выходим
@@ -359,7 +360,7 @@ if (tabbedSlider) {
       if (tabbedButtons[i].classList.contains("tabbed-button--active")) {
         document
           .querySelectorAll(".tabbed-slider__content")
-          [i].classList.add("tabbed-slider__content--active");
+        [i].classList.add("tabbed-slider__content--active");
       }
       i++;
     }
@@ -379,7 +380,7 @@ if (tabbedSlider) {
 // 4. Удаляем класс с предыдущего фокуса
 
 let minicardList = document.querySelector(".minicard-list");
-minicardList.addEventListener("focusin", function(evt) {
+minicardList.addEventListener("focusin", function (evt) {
   evt.preventDefault();
   let targetButton = evt.target;
   targetButton.parentElement.parentElement.classList.add(
@@ -387,7 +388,7 @@ minicardList.addEventListener("focusin", function(evt) {
   );
 });
 
-minicardList.addEventListener("focusout", function(evt) {
+minicardList.addEventListener("focusout", function (evt) {
   evt.preventDefault();
   let targetButton = evt.target;
   targetButton.parentElement.parentElement.classList.remove(

@@ -399,14 +399,23 @@ a {
   height: 25px;
   background-repeat: no-repeat;
   background-position: 0 center;
-  opacity: 0.25;
+  opacity: 0.228;
 }
 
 .radiocheck__input:hover:not(:disabled) + .check-box,
 .radiocheck__input:focus:not(:disabled) + .check-box,
 .radiocheck__input:hover:not(:disabled) + .radio-box,
 .radiocheck__input:focus:not(:disabled) + .radio-box {
-  opacity: 0.4;
+  opacity: 0.294;
+}
+
+.radiocheck__input:disabled + .check-box,
+.radiocheck__input:disabled + .radio-box {
+  opacity: 0.09;
+}
+
+.radiocheck__input:disabled ~ .radiocheck__label {
+  color: rgba(0, 0, 0, 0.4);
 }
 
 .radiocheck__input:checked + .check-box {
@@ -434,10 +443,6 @@ a {
   font: 400 15px/20px "PT Sans", Arial, sans-serif;
   text-transform: uppercase;
   word-wrap: break-word;
-}
-
-.radiocheck__input:disabled ~ .radiocheck__label {
-  color: rgba(0, 0, 0, 0.4);
 }
 
 .range-slider {
